@@ -50,3 +50,12 @@ const {
 
 console.log(city);
 console.log(temperature);
+
+
+//Rest operator
+
+const [parisId, nycId, ...othersCitiesId] = citiesId;
+
+console.log(parisId);
+console.log(nycId);
+console.log(othersCitiesId);
