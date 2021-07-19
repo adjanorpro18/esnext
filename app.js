@@ -42,3 +42,11 @@ console.log(weather);
 
 
 // Affectation destructurée
+
+const {
+    city,
+    temperature
+} = weather;
+
+console.log(city);
+console.log(temperature);
