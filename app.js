@@ -1,4 +1,4 @@
-//Creation de la variable favoriteCityId avec le mot cle let
+//Creation de variable cle let
 
 let favoriteCityId = "rome"
 
@@ -10,7 +10,7 @@ favoriteCityId = "paris"
 console.log(favoriteCityId);
 
 
-//Creation d'une constante CitiesId avec le mot cle const
+//Creation d'une constante avec le mot cle const
 
 const citiesId = ["paris", "nyc", "rome", "rio-de-janeiro"]
 
@@ -20,3 +20,25 @@ console.log(citiesId);
 //citiesId = [];
 citiesId.push("Tokyo");
 console.log(citiesId);
+
+//Creation d'objet 
+
+function getWeather(cityId) {
+
+    let city = cityId;
+    let temperature = 20;
+
+    return {
+        city: city.toUpperCase(),
+        temperature: temperature
+    }
+}
+
+//Creation dela constante
+
+const weather = getWeather(favoriteCityId);
+console.log(weather);
+
+
+
+// Affectation destructurée
