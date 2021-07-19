@@ -73,7 +73,7 @@ class Trip {
 
     //Je renvoi mon toString
     toString() {
-        return this.id + ' ' + this.name + ' ' + this.imageUrl
+        return this.id + ' ' + this.name + ' ' + this.imageUrl + ' ' + this.price
     }
 
     // Setter sur la variable this._id de l'attribut id
@@ -122,7 +122,7 @@ class Trip {
         return {
             id: 'rio-de-Janeiro',
             name: 'Rio de Janeiro',
-            imageUrl: 'img/rio-de-janeiro.jpg'
+            imageUrl: 'img/rio-de-janeiro.jpg',
         }
     }
 
@@ -144,3 +144,18 @@ console.log(parisTrip.toString());
 const defaultTrip = Trip.getDefaultTrip();
 
 console.log(defaultTrip.toString());
+
+// Heritage 
+
+class FreeTrip extends Trip {
+    constructor(id, name, imageUrl, price) {
+        super(id, name, imageUrl);
+        this.price = 0;
+    }
+
+}
+
+//creation de la constante de la nouvelle classe qui herite de la clase mere 
+const freeTrip = new FreeTrip('nantes', 'Nantes', 'img/nantes.jpg')
+
+console.log(freeTrip.toString());
