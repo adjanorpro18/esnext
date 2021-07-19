@@ -6,7 +6,7 @@ console.log(favoriteCityId); //
 
 //Affectation d'une nouvelle valeur à la variable favoriteCityId 
 
-let favoriteCityId = "paris"
+favoriteCityId = "paris"
 console.log(favoriteCityId);
 
 
@@ -17,4 +17,4 @@ const citiesId = ["paris", "nyc", "rome", "rio-de-janeiro"]
 console.log(citiesId);
 
 //Affectation d'une valeur para exemple tableau vide à la const CitiesId
-const citiesId = []
+citiesId = []
