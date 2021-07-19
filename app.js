@@ -17,4 +17,6 @@ const citiesId = ["paris", "nyc", "rome", "rio-de-janeiro"]
 console.log(citiesId);
 
 //Affectation d'une valeur para exemple tableau vide à la const CitiesId
-citiesId = []
+//citiesId = [];
+citiesId.push("Tokyo");
+console.log(citiesId);
