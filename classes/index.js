@@ -112,7 +112,7 @@ class TripService {
 
                     resolve(trip); // en cas de success
 
-                } else { // la partie reject
+                } else { // en cas rejet
 
                     reject(err);
 
@@ -150,7 +150,7 @@ class PriceService {
         //  Map of 2 trips
         this.prices = new Map();
         this.prices.set('paris', 100);
-        this.prices.set('rio-de-janeiro', 150);
+        this.prices.set('rio-de-janeiro', 800);
 
     }
 
@@ -158,11 +158,33 @@ class PriceService {
 
     findPriceByTripId(tripId) {
         return new Promise((resolve, reject) => {
-            setTimeout(() => {
+            setTimeout((price, err) => {
                 // ici l'exécution du code est asynchrone
+
+                price = this.currentPrice(tripId)
+
+                if (price != undefined) {
+                    resolve(price); // en cas de success
+                } else {
+                    reject(err); // en cas de rejet
+                }
                 // TODO utiliser resolve et reject en fonction du résultat de la recherche
             }, 2000)
         });
+    }
+
+    // methode qui retourne le prix du trip courant 
+
+    currentPrice(tripId) {
+
+        let prixCourant = null;
+
+        for (let [id, price] of this.prices.entries()) {
+            if (id == tripId) {
+                prixCourant = price;
+            }
+        };
+        return prixCourant;
     }
 }
 exports.PriceService = PriceService;

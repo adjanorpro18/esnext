@@ -90,18 +90,36 @@ console.log(freeTrip.toString());
 
 
 //Promise
-//Pour afficher le service TripService
 
-tripService = new classes.TripService();
-console.log(tripService); //afficher les sets TripService par nom
+//Pour afficher les instance de  service TripService et PriceService
 
-let tripCourant = null;
-let tripName = "Toulouse"
+let tripService = new classes.TripService();
+console.log(tripService);
+
+
+// recherche par nom de voyage avec la valeur Toulouse
+
+let tripName = "Paris";
+let tripCourant = "Paris";
 
 tripService.findByName(tripName)
     .then(trip => {
         tripCourant = trip;
-        console.log("Trip found " + tripCourant);
+        console.log(`Trip found ${tripName}`);
     })
     .catch(err =>
         console.log(`No trip with name ${tripName}`));
+
+// pour recuperer  le prix du voyage de Rio de Janeiro
+
+let priceService = new classes.PriceService();
+console.log(priceService);
+
+
+let tripId = "rio-de-janeiro";
+
+priceService.findPriceByTripId(tripId)
+    .then(price => {
+        prixCourant = price;
+        console.log(`Price found ${price}`);
+    }).catch(err => console.log(`No price found for id ${trip.id}`));
